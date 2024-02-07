@@ -4,7 +4,7 @@ const SensorData = require("../models/sensordata");
 
 const sensordataHandler = async (req, res, next) => {
   
-  const { waterlevel, motorstatus } = req.body;
+  const { v1,v2,v3,i1,i2,i3 } = req.body;
 
 
   
@@ -29,15 +29,23 @@ const sensordataHandler = async (req, res, next) => {
     const result = await SensorData.findOneAndUpdate(
       { _id: sensordata[0]._id },
       {
-        waterlevel: waterlevel,
-        motorstatus: motorstatus,
+        v1: v1,
+        v2: v2,
+        v3: v3,
+        i1: i1,
+        i2: i2,
+        i3: i3,
       }
     );
   } else {
     try {
       const newSensorData = new SensorData({
-        waterlevel: waterlevel,
-        motorstatus: motorstatus,
+        v1: v1,
+        v2: v2,
+        v3: v3,
+        i1: i1,
+        i2: i2,
+        i3: i3,
 
 
 
@@ -80,8 +88,12 @@ const getdataHandler = async (req, res, next) => {
   }
 
   const data = {
-    waterlevel: sensordata[0].waterlevel,
-    motorstatus: sensordata[0].motorstatus,
+    v1: sensordata[0].v1,
+    v2: sensordata[0].v2,
+    v3: sensordata[0].v3,
+    i1: sensordata[0].i1,
+    i2: sensordata[0].i2,
+    i3: sensordata[0].i3,
     
   }
   
