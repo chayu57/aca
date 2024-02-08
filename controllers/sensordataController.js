@@ -4,7 +4,7 @@ const SensorData = require("../models/sensordata");
 
 const sensordataHandler = async (req, res, next) => {
   
-  const { v1,v2,v3,i1,i2,i3 } = req.body;
+  const { v1,v2,v3,i1,i2,i3 , w1 , w2} = req.body;
 
 
   
@@ -35,6 +35,9 @@ const sensordataHandler = async (req, res, next) => {
         i1: i1,
         i2: i2,
         i3: i3,
+        w1: w1,
+        w2:w2,
+
       }
     );
   } else {
@@ -46,6 +49,8 @@ const sensordataHandler = async (req, res, next) => {
         i1: i1,
         i2: i2,
         i3: i3,
+        w1: w1,
+        w2:w2,
 
 
 
@@ -94,6 +99,8 @@ const getdataHandler = async (req, res, next) => {
     i1: sensordata[0].i1,
     i2: sensordata[0].i2,
     i3: sensordata[0].i3,
+    w1: sensordata[0].w1,
+    w2: sensordata[0].w2,
     
   }
   

@@ -30,6 +30,14 @@ const sensordataSchema = new Schema(
         type: Schema.Types.Number,
         required: true,
       },
+      w1: {
+        type: Schema.Types.Number,
+        required: true,
+      },
+      w2: {
+        type: Schema.Types.Number,
+        required: true,
+      },
      
     },
     {
